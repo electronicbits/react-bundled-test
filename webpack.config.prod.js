@@ -43,9 +43,20 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      loaders: ['style-loader', 'css-loader'],
-      include: path.join(__dirname, 'src')
+      loader: 'style-loader'
+    }, {
+      test: /\.css$/,
+      loader: 'css-loader',
+      query: {
+        modules: true,
+        localIdentName: '[name]__[local]___[hash:base64:5]'
+      }
     }
+    // {
+    //   test: /\.css$/,
+    //   loaders: ['style-loader', 'css-loader'],
+    //   include: path.join(__dirname, 'src')
+    // }
 
 
     // ,
